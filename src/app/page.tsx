@@ -531,14 +531,7 @@ export default function Home() {
       <nav className="sylk-nav">
         <div className="sylk-container">
           <div className="sylk-nav-content">
-            <div className="sylk-logo" style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
-              <img 
-                src="https://i.ibb.co/MxCD2qYd/EN9uw-Tm-W4-AUSOPD.jpg" 
-                alt="Logo Câmera"
-                style={{width: '40px', height: '40px', borderRadius: '50%'}}
-              />
-              Amaro Fotógrafo
-            </div>
+            <div className="sylk-logo">Amaro Fotógrafo</div>
             <div 
               className="sylk-hamburger"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -712,6 +705,17 @@ export default function Home() {
       {/* Footer */}
       <footer className="sylk-footer">
         <div className="sylk-container">
+          <p style={{
+            fontFamily: 'Poppins, Helvetica Neue, Helvetica, sans-serif',
+            fontSize: '1.2rem',
+            fontWeight: '300',
+            letterSpacing: '2px',
+            textTransform: 'uppercase',
+            marginBottom: '1rem',
+            color: '#fff'
+          }}>
+            Deus é Fiel
+          </p>
           <p>&copy; 2025 Amaro Fotógrafo. Todos os direitos reservados.</p>
         </div>
       </footer>
