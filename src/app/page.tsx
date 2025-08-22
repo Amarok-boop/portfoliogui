@@ -443,13 +443,15 @@ export default function Home() {
             top: 70px;
             left: 0;
             right: 0;
-            background: white;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
             flex-direction: column;
             padding: 2rem;
             gap: 1rem;
             transform: translateY(-100%);
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
           }
 
           .sylk-nav-links.open {
