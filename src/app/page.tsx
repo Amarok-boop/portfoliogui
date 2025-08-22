@@ -79,6 +79,7 @@ export default function Home() {
     <>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
         
         * {
           box-sizing: border-box;
@@ -112,11 +113,14 @@ export default function Home() {
         }
 
         .sylk-hero h1 {
+          font-family: 'Montserrat', sans-serif;
           font-size: 4rem;
           font-weight: 300;
           letter-spacing: 3px;
           margin-bottom: 1rem;
+          margin-top: 4rem;
           text-transform: uppercase;
+          line-height: 1.1;
         }
 
         .sylk-hero p {
@@ -431,6 +435,80 @@ export default function Home() {
           font-weight: 300;
         }
 
+        .footer-social {
+          margin-bottom: 2rem;
+        }
+
+        .social {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+        }
+
+        .social li a {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          background: rgba(255,255,255,0.1);
+          border-radius: 50%;
+          color: #fff;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          transition: all 0.3s ease;
+          border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .social li a:hover {
+          background: rgba(255,255,255,0.2);
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Rotating Text Animation */
+        .rotate-words {
+          position: relative;
+          display: block;
+          color: #fff;
+          width: 100%;
+          height: 1.2em;
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .rotate-words span {
+          position: absolute;
+          opacity: 0;
+          animation: rotateWord 21s linear infinite 0s;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          font-weight: 600;
+        }
+
+        .rotate-words span:nth-child(2) { animation-delay: 3s; }
+        .rotate-words span:nth-child(3) { animation-delay: 6s; }
+        .rotate-words span:nth-child(4) { animation-delay: 9s; }
+        .rotate-words span:nth-child(5) { animation-delay: 12s; }
+        .rotate-words span:nth-child(6) { animation-delay: 15s; }
+        .rotate-words span:nth-child(7) { animation-delay: 18s; }
+
+        @keyframes rotateWord {
+          0% { opacity: 0; }
+          2% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+          5% { opacity: 1; transform: translateX(-50%) translateY(0px); }
+          17% { opacity: 1; transform: translateX(-50%) translateY(0px); }
+          20% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+          80% { opacity: 0; }
+          100% { opacity: 0; }
+        }
+
         .sylk-hamburger {
           display: none;
           flex-direction: column;
@@ -570,14 +648,27 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="sylk-hero">
         <div>
-          <h1>Amaro Fotógrafo</h1>
-          <p>Capturando momentos únicos através das lentes</p>
-          <button 
-            className="sylk-btn"
-            onClick={() => scrollToSection('gallery')}
-          >
+          <h1>
+            Eu capturo
+            <br/>
+            <span className="rotate-words">
+              <span>vida.</span>
+              <span>momentos.</span>
+              <span>felicidade.</span>
+              <span>emoções.</span>
+              <span>ação.</span>
+              <span>beleza.</span>
+              <span>histórias.</span>
+            </span>
+          </h1>
+          <div style={{ textAlign: 'center' }}>
+            <button 
+              className="sylk-btn"
+              onClick={() => scrollToSection('gallery')}
+            >
               Ver Galeria
             </button>
+          </div>
         </div>
       </section>
 
@@ -721,6 +812,15 @@ export default function Home() {
       {/* Footer */}
       <footer className="sylk-footer">
         <div className="sylk-container">
+          {/* Social Icons */}
+          <div className="footer-social">
+            <ul className="social">
+              <li><a href="https://www.instagram.com/amarofotografo" target="_blank" rel="noopener noreferrer" className="instagram">📷</a></li>
+              <li><a href="mailto:guilhermeamaro67@gmail.com" className="email">✉️</a></li>
+              <li><a href="https://wa.me/5521965568323" target="_blank" rel="noopener noreferrer" className="whatsapp">📞</a></li>
+            </ul>
+          </div>
+          
           <p style={{
             fontFamily: 'Poppins, Helvetica Neue, Helvetica, sans-serif',
             fontSize: '1.2rem',
