@@ -163,6 +163,18 @@ export default function Home() {
           align-items: center;
         }
 
+        @media (max-width: 768px) {
+          .sylk-nav-content {
+            justify-content: center;
+            position: relative;
+          }
+          
+          .sylk-hamburger {
+            position: absolute;
+            left: 0;
+          }
+        }
+
         .sylk-logo {
           font-family: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif;
           font-size: 1.15rem;
@@ -452,10 +464,12 @@ export default function Home() {
             transition: transform 0.3s ease;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: none;
           }
 
           .sylk-nav-links.open {
             transform: translateY(0);
+            display: flex;
           }
 
           .sylk-hamburger {
